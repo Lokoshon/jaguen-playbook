@@ -2803,22 +2803,16 @@ window.onload = function() {
     const tipo_correo = getParam("tipo_correo");
     const intentos = getParam("intentos");
 
-    const s = document.getElementById("secretaria");
+    const s = document.getElementById("fi-secre");
     if (s) s.value = secretaria || "";
 
-    const c = document.getElementById("comprador");
+    const c = document.getElementById("fi-comp");
     if (c) c.value = comprador || "";
 
-    const cc = document.getElementById("comprador_corto");
-    if (cc) cc.value = comprador_corto || "";
-
-    const co = document.getElementById("correo");
+    const co = document.getElementById("fi-correo");
     if (co) co.value = correo || "";
 
-    const tc = document.getElementById("tipo_correo");
-    if (tc) tc.value = tipo_correo || "";
-
-    const i = document.getElementById("intentos");
+    const i = document.getElementById("fi-intentos");
     if (i) i.value = intentos || "";
 
 };
