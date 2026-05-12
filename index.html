@@ -2796,24 +2796,14 @@ function getParam(name) {
 
 window.onload = function() {
 
-    const secretaria = getParam("secretaria");
-    const comprador = getParam("comprador");
-    const comprador_corto = getParam("comprador_corto");
-    const correo = getParam("correo");
-    const tipo_correo = getParam("tipo_correo");
-    const intentos = getParam("intentos");
+    callState.nombreSecretaria = getParam("secretaria") || '';
+    callState.nombreComprador = getParam("comprador") || '';
+    callState.nombreCorto = getParam("comprador_corto") || '';
+    callState.correo = getParam("correo") || '';
+    callState.tipoCorreo = getParam("tipo_correo") || '';
+    callState.intentos = getParam("intentos") || 0;
 
-    const s = document.getElementById("fi-secre");
-    if (s) s.value = secretaria || "";
-
-    const c = document.getElementById("fi-comp");
-    if (c) c.value = comprador || "";
-
-    const co = document.getElementById("fi-correo");
-    if (co) co.value = correo || "";
-
-    const i = document.getElementById("fi-intentos");
-    if (i) i.value = intentos || "";
+    renderInteractiveFollowUp();
 
 };
 
