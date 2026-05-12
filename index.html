@@ -1885,12 +1885,26 @@ function iwReset() {
 }
 // ── INTERACTIVE CALL SCRIPT ──────────────────────────────────────────
 const callState = {
-  nombreSecretaria: '', nombreComprador: '', nombreCorto: '',
-  correo: '', tipoInteraccion: '', interesCotz: '', metodoCotz: '',
-  tipoCorreo: '', nombreCorreo: '',
+  nombreSecretaria: '',
+  nombreComprador: '',
+  nombreCorto: '',
+  correo: '',
+  tipoInteraccion: '',
+  interesCotz: '',
+  metodoCotz: '',
+  tipoCorreo: '',
+  nombreCorreo: '',
   productos: Array(14).fill(''),
   bloque: 1
 };
+
+const params = new URLSearchParams(window.location.search);
+
+callState.nombreSecretaria = params.get("secretaria") || '';
+callState.nombreComprador = params.get("comprador") || '';
+callState.correo = params.get("correo") || '';
+callState.tipoCorreo = params.get("tipo_correo") || '';
+callState.intentos = params.get("intentos") || 0;
 
 function renderInteractiveCall() {
   return `<div class="call-wrap">
