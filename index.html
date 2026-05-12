@@ -2801,6 +2801,41 @@ function toggleSidebar() {
   btn.style.left = collapsed ? '8px' : '244px';
 }
 </script>
+<script>
+window.addEventListener("load", function() {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const secretaria = params.get("secretaria") || '';
+    const comprador = params.get("comprador") || '';
+    const correo = params.get("correo") || '';
+    const intentos = params.get("intentos") || '';
+
+    const secreInput = document.getElementById("fi-secre");
+    if (secreInput) {
+        secreInput.value = secretaria;
+        secreInput.dispatchEvent(new Event('input'));
+    }
+
+    const compInput = document.getElementById("fi-comp");
+    if (compInput) {
+        compInput.value = comprador;
+        compInput.dispatchEvent(new Event('input'));
+    }
+
+    const correoInput = document.getElementById("fi-correo");
+    if (correoInput) {
+        correoInput.value = correo;
+        correoInput.dispatchEvent(new Event('input'));
+    }
+
+    const intentosInput = document.getElementById("fi-intentos");
+    if (intentosInput) {
+        intentosInput.value = intentos;
+        intentosInput.dispatchEvent(new Event('input'));
+    }
+
+}); 
 </script> 
 </body>
 </html>
