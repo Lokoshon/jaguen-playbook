@@ -2787,5 +2787,42 @@ function toggleSidebar() {
   btn.style.left = collapsed ? '8px' : '244px';
 }
 </script>
+<script>
+
+function getParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+window.onload = function() {
+
+    const secretaria = getParam("secretaria");
+    const comprador = getParam("comprador");
+    const comprador_corto = getParam("comprador_corto");
+    const correo = getParam("correo");
+    const tipo_correo = getParam("tipo_correo");
+    const intentos = getParam("intentos");
+
+    const s = document.getElementById("secretaria");
+    if (s) s.value = secretaria || "";
+
+    const c = document.getElementById("comprador");
+    if (c) c.value = comprador || "";
+
+    const cc = document.getElementById("comprador_corto");
+    if (cc) cc.value = comprador_corto || "";
+
+    const co = document.getElementById("correo");
+    if (co) co.value = correo || "";
+
+    const tc = document.getElementById("tipo_correo");
+    if (tc) tc.value = tipo_correo || "";
+
+    const i = document.getElementById("intentos");
+    if (i) i.value = intentos || "";
+
+};
+
+</script> 
 </body>
 </html>
