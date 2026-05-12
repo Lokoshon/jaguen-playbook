@@ -2801,26 +2801,6 @@ function toggleSidebar() {
   btn.style.left = collapsed ? '8px' : '244px';
 }
 </script>
-<script>
-
-function getParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
-}
-
-window.onload = function() {
-
-    callState.nombreSecretaria = getParam("secretaria") || '';
-    callState.nombreComprador = getParam("comprador") || '';
-    callState.nombreCorto = getParam("comprador_corto") || '';
-    callState.correo = getParam("correo") || '';
-    callState.tipoCorreo = getParam("tipo_correo") || '';
-    callState.intentos = getParam("intentos") || 0;
-
-    renderInteractiveFollowUp();
-
-};
-
 </script> 
 </body>
 </html>
